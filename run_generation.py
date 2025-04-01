@@ -131,6 +131,9 @@ parser.add_argument("--torch-compile", action="store_true")
 # parser.add_argument(
 #     "--backend", default="ipex", type=str, help="backend of torch.compile"
 # )
+parser.add_argument(
+    "--backend", default="inductor", type=str, help="backend of torch.compile"
+)
 parser.add_argument("--profile", action="store_true")
 parser.add_argument("--benchmark", action="store_true")
 parser.add_argument("--num-iter", default=100, type=int, help="num iter")
@@ -403,13 +406,15 @@ def trace_handler(prof):
 #         deployment_mode=args.deployment_mode,
 #         cache_weight_for_large_batch=args.cache_weight_for_large_batch,
 #     )
-# if args.torch_compile:
+if args.torch_compile:
+    print("Converting the model using torch.compile")
 #     if args.deployment_mode:
 #         raise SystemExit(
 #             "[ERROR] deployment_mode cannot co-work with torch.compile, please set deployment_mode"
 #             " to False if want to use torch.compile."
 #         )
-#     model.forward = torch.compile(model.forward, dynamic=True, backend=args.backend)
+    # model.forward = torch.compile(model.forward, dynamic=True, backend=args.backend)
+    model = torch.compile(model, dynamic=True, backend=args.backend)
 
 
 if args.benchmark:
