@@ -1,0 +1,94 @@
+[do_sample = False, num_beam = 4]
+
+python run_generation.py -m /mnt/mydisk/yogesh/hub/Llama-2-7b-chat-hf --prompt "In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative expression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer" --input-tokens 32 --max-new-tokens 32 --token-latency --num-warmup 0 --num-iter 2  --deployment-mode --benchmark --native
+Namespace(model_id='/mnt/mydisk/yogesh/hub/Llama-2-7b-chat-hf', dtype='bfloat16', input_tokens='32', max_new_tokens=32, prompt='In a world where artificial intell
+igence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative expression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer', streaming=False, config_file=None, greedy=False, native=True, deployment_mode=True, torch_compile=False, profile=False, benchmark=True, num_iter=2, num_warmup=0, batch_size=1, token_latency=True, cache_weight_for_large_batch=False, vision_text_model=False, kv_cache_dtype='auto', input_mode='0')                                                            Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  1.42s/it]
+Num beams:4
+---- Prompt size: 187
+/mnt/mydisk/yogesh/Native-Implementation/run_generation.py:489: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cp
+u', args...)` instead.                                                                                                                                              with torch.inference_mode(), torch.no_grad(), torch.cpu.amp.autocast(
+/mnt/mydisk/yogesh/anaconda3/envs/native_py_3.10/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set 
+to `False`. However, `temperature` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.                                                                                                                                                                warnings.warn(
+/mnt/mydisk/yogesh/anaconda3/envs/native_py_3.10/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set 
+to `False`. However, `top_p` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.          warnings.warn(
+checker: Sample is running in _beam_search ->1
+
+Do sample = False
+
+Output:
+(tensor([[    1,   512,   263,  3186,   988, 23116, 21082,   338,  4327,   292,
+          1432,  9565,   310,  5199,  2834, 29892,   515,  3345,  1218,  9595,
+           304, 19479,  5281, 16021,  5925,   322,   907,  1230,  4603, 29892,
+           263,  4123, 13897, 29892, 18225,   491,   385,  1663,  2219,   519,
+         27742,   322,   385,   443,  2766,   369,   292,  3683,  3381,   304,
+          5503,   278, 24371,   310,   825,   338,  1950, 29892,  7232, 17862,
+           373,   385,   626,  2966,  2738, 16342,   304,  1653,   385, 12862,
+          1120,   468, 29878,  1664,  1788, 29892,   697,   393,   451,   871,
+          6161,  1078,   775,   363,  1959,  2264,   541,   884,  2274, 29879,
+           278,  5900,  5742,  1269,  5314, 29892,  2893, 11057,   297, 29872,
+          2416,   819,  2478, 29892,   322,  8128,  7343, 29892,  7333,  1891,
+         16705, 12464,  4395,   304,   278,  5412,  6509,  3114,   310,  1269,
+          8368, 29892,  5662,  3864,   393,   694,  1023,  5110,   414,  7150,
+           278,  1021, 10035, 20890,   541,  2012, 14169,   515,   385,   319,
+         29902, 29899, 24477,   854,  6042,   272, 15390,   310, 29537,   292,
+         15038,   297,  1009, 28947, 29892, 26233,  8671, 13501, 29892,   322,
+          9926,  3241,   263, 25871,  8004,   310, 15281,  8720, 22001, 29892,
+           599,  1550,  3990,  1218,   269,  3021,  4695,   630,  5613,  4086,
+          9068, 14009,   304, 24809,  3273, 29899, 12011,  5155,   322,  3867,
+         13173,  7309,   800,   363,  1269,  2933, 29892, 27999, 19479,  5281,
+           278,   982,  8041,  5110,   304,   775,   322,   282,  5555,   278,
+           982,   363,   263,   716, 12623,   310,   319, 29902, 29899]]), [39.061620473861694, 0.7512810230255127, 0.7529487609863281, 0.7543299198150635, 0.7543
+239593505859, 0.7528142929077148, 0.7538888454437256, 0.7536678314208984, 0.752239465713501, 0.7634334564208984, 0.7562925815582275, 0.7565901279449463, 0.7577600479125977, 0.7563505172729492, 0.7554218769073486, 0.7568347454071045, 0.7574107646942139, 0.7569372653961182, 0.7589449882507324, 0.757512092590332, 0.754910945892334, 0.7585501670837402, 0.7576198577880859, 0.7584798336029053, 0.7622251510620117, 0.7617783546447754, 0.7601776123046875, 0.760059118270874, 0.7630090713500977, 0.7648372650146484, 0.7655165195465088, 0.7746884822845459])                                                                                                  
+Token Latency: True
+
+Native: True
+
+Token Latency: True
+
+['In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative e
+xpression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer questions and provide detailed explanations for each response, thereby revolutionizing the way students learn to code and paving the way for a new generation of AI-'] [32]                                                                                                                                                      Iteration: 0, Time: 62.647745 sec
+Total List: [[39.061620473861694, 0.7512810230255127, 0.7529487609863281, 0.7543299198150635, 0.7543239593505859, 0.7528142929077148, 0.7538888454437256, 0.753667
+8314208984, 0.752239465713501, 0.7634334564208984, 0.7562925815582275, 0.7565901279449463, 0.7577600479125977, 0.7563505172729492, 0.7554218769073486, 0.7568347454071045, 0.7574107646942139, 0.7569372653961182, 0.7589449882507324, 0.757512092590332, 0.754910945892334, 0.7585501670837402, 0.7576198577880859, 0.7584798336029053, 0.7622251510620117, 0.7617783546447754, 0.7601776123046875, 0.760059118270874, 0.7630090713500977, 0.7648372650146484, 0.7655165195465088, 0.7746884822845459]]                                                                                                                                                                checker: Sample is running in _beam_search ->1
+
+Do sample = False
+
+Output:
+(tensor([[    1,   512,   263,  3186,   988, 23116, 21082,   338,  4327,   292,
+          1432,  9565,   310,  5199,  2834, 29892,   515,  3345,  1218,  9595,
+           304, 19479,  5281, 16021,  5925,   322,   907,  1230,  4603, 29892,
+           263,  4123, 13897, 29892, 18225,   491,   385,  1663,  2219,   519,
+         27742,   322,   385,   443,  2766,   369,   292,  3683,  3381,   304,
+          5503,   278, 24371,   310,   825,   338,  1950, 29892,  7232, 17862,
+           373,   385,   626,  2966,  2738, 16342,   304,  1653,   385, 12862,
+          1120,   468, 29878,  1664,  1788, 29892,   697,   393,   451,   871,
+          6161,  1078,   775,   363,  1959,  2264,   541,   884,  2274, 29879,
+           278,  5900,  5742,  1269,  5314, 29892,  2893, 11057,   297, 29872,
+          2416,   819,  2478, 29892,   322,  8128,  7343, 29892,  7333,  1891,
+         16705, 12464,  4395,   304,   278,  5412,  6509,  3114,   310,  1269,
+          8368, 29892,  5662,  3864,   393,   694,  1023,  5110,   414,  7150,
+           278,  1021, 10035, 20890,   541,  2012, 14169,   515,   385,   319,
+         29902, 29899, 24477,   854,  6042,   272, 15390,   310, 29537,   292,
+         15038,   297,  1009, 28947, 29892, 26233,  8671, 13501, 29892,   322,
+          9926,  3241,   263, 25871,  8004,   310, 15281,  8720, 22001, 29892,
+           599,  1550,  3990,  1218,   269,  3021,  4695,   630,  5613,  4086,
+          9068, 14009,   304, 24809,  3273, 29899, 12011,  5155,   322,  3867,
+         13173,  7309,   800,   363,  1269,  2933, 29892, 27999, 19479,  5281,
+           278,   982,  8041,  5110,   304,   775,   322,   282,  5555,   278,
+           982,   363,   263,   716, 12623,   310,   319, 29902, 29899]]), [39.04644799232483, 0.7584936618804932, 0.75783371925354, 0.7603707313537598, 0.7623515
+129089355, 0.7599446773529053, 0.761927604675293, 0.7624907493591309, 0.7636101245880127, 0.7617936134338379, 0.7622182369232178, 0.7651643753051758, 0.7633402347564697, 0.7654216289520264, 0.764739990234375, 0.7691998481750488, 0.7678885459899902, 0.7665271759033203, 0.7695541381835938, 0.7660892009735107, 0.7652270793914795, 0.7696068286895752, 0.7655837535858154, 0.7671608924865723, 0.769709587097168, 0.7695512771606445, 0.7690858840942383, 0.7686896324157715, 0.7704286575317383, 0.7735769748687744, 0.7750072479248047, 0.7738966941833496])                                                                                                    
+Token Latency: True
+
+Native: True
+
+Token Latency: True
+
+['In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative e
+xpression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer questions and provide detailed explanations for each response, thereby revolutionizing the way students learn to code and paving the way for a new generation of AI-'] [32]                                                                                                                                                      Iteration: 1, Time: 62.800889 sec
+Total List: [[39.061620473861694, 0.7512810230255127, 0.7529487609863281, 0.7543299198150635, 0.7543239593505859, 0.7528142929077148, 0.7538888454437256, 0.753667
+8314208984, 0.752239465713501, 0.7634334564208984, 0.7562925815582275, 0.7565901279449463, 0.7577600479125977, 0.7563505172729492, 0.7554218769073486, 0.7568347454071045, 0.7574107646942139, 0.7569372653961182, 0.7589449882507324, 0.757512092590332, 0.754910945892334, 0.7585501670837402, 0.7576198577880859, 0.7584798336029053, 0.7622251510620117, 0.7617783546447754, 0.7601776123046875, 0.760059118270874, 0.7630090713500977, 0.7648372650146484, 0.7655165195465088, 0.7746884822845459], [39.04644799232483, 0.7584936618804932, 0.75783371925354, 0.7603707313537598, 0.7623515129089355, 0.7599446773529053, 0.761927604675293, 0.7624907493591309, 0.7636101245880127, 0.7617936134338379, 0.7622182369232178, 0.7651643753051758, 0.7633402347564697, 0.7654216289520264, 0.764739990234375, 0.7691998481750488, 0.7678885459899902, 0.7665271759033203, 0.7695541381835938, 0.7660892009735107, 0.7652270793914795, 0.7696068286895752, 0.7655837535858154, 0.7671608924865723, 0.769709587097168, 0.7695512771606445, 0.7690858840942383, 0.7686896324157715, 0.7704286575317383, 0.7735769748687744, 0.7750072479248047, 0.7738966941833496]]          
+ ---------- Summary: ----------
+Inference latency: 62724.32 ms.
+First token average latency: 39054.03 ms.
+Average 2... latency: 762.05 ms.
+P90 2... latency: 769.61 ms.
+P99 2... latency: 775.01 ms.
