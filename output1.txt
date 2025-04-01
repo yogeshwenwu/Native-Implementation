@@ -1,0 +1,157 @@
+[do_sample = False, --greedy]
+
+
+python run_generation.py -m /mnt/mydisk/yogesh/hub/Llama-2-7b-chat-hf --prompt "In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative expression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer" --input-tokens 32 --max-new-tokens 32 --token-latency --num-warmup 0 --num-iter 2  --deployment-mode --benchmark --greedy --native
+Namespace(model_id='/mnt/mydisk/yogesh/hub/Llama-2-7b-chat-hf', dtype='bfloat16', input_tokens='32', max_new_tokens=32, prompt='In a world where artificial intell
+igence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative expression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer', streaming=False, config_file=None, greedy=True, native=True, deployment_mode=True, torch_compile=False, profile=False, benchmark=True, num_iter=2, num_warmup=0, batch_size=1, token_latency=True, cache_weight_for_large_batch=False, vision_text_model=False, kv_cache_dtype='auto', input_mode='0')                                                             Loading checkpoint shards: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:02<00:00,  1.46s/it]
+Num beams:1
+---- Prompt size: 187
+/mnt/mydisk/yogesh/Native-Implementation/run_generation.py:489: FutureWarning: `torch.cpu.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cp
+u', args...)` instead.                                                                                                                                              with torch.inference_mode(), torch.no_grad(), torch.cpu.amp.autocast(
+/mnt/mydisk/yogesh/anaconda3/envs/native_py_3.10/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:628: UserWarning: `do_sample` is set 
+to `False`. However, `temperature` is set to `0.6` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `temperature`.                                                                                                                                                                warnings.warn(
+/mnt/mydisk/yogesh/anaconda3/envs/native_py_3.10/lib/python3.10/site-packages/transformers/generation/configuration_utils.py:633: UserWarning: `do_sample` is set 
+to `False`. However, `top_p` is set to `0.9` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.          warnings.warn(
+checker: Sample is running in _sample() -> 3
+
+Do sample = False
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+[12.856848001480103, 0.5034208297729492, 0.5008909702301025, 0.5030407905578613, 0.5009427070617676, 0.5019352436065674, 0.5005671977996826, 0.5006082057952881, 0
+.49993014335632324, 0.4997444152832031, 0.4995880126953125, 0.49921274185180664, 0.4994962215423584, 0.5007820129394531, 0.4997265338897705, 0.5003633499145508, 0.49922800064086914, 0.4992561340332031, 0.4992516040802002, 0.49925899505615234, 0.4992344379425049, 0.4996981620788574, 0.4996638298034668, 0.5017473697662354, 0.4991719722747803, 0.5000536441802979, 0.500324010848999, 0.49982166290283203, 0.4992096424102783, 0.4997382164001465, 0.49960756301879883, 0.5001688003540039]   Output:
+(tensor([[    1,   512,   263,  3186,   988, 23116, 21082,   338,  4327,   292,
+          1432,  9565,   310,  5199,  2834, 29892,   515,  3345,  1218,  9595,
+           304, 19479,  5281, 16021,  5925,   322,   907,  1230,  4603, 29892,
+           263,  4123, 13897, 29892, 18225,   491,   385,  1663,  2219,   519,
+         27742,   322,   385,   443,  2766,   369,   292,  3683,  3381,   304,
+          5503,   278, 24371,   310,   825,   338,  1950, 29892,  7232, 17862,
+           373,   385,   626,  2966,  2738, 16342,   304,  1653,   385, 12862,
+          1120,   468, 29878,  1664,  1788, 29892,   697,   393,   451,   871,
+          6161,  1078,   775,   363,  1959,  2264,   541,   884,  2274, 29879,
+           278,  5900,  5742,  1269,  5314, 29892,  2893, 11057,   297, 29872,
+          2416,   819,  2478, 29892,   322,  8128,  7343, 29892,  7333,  1891,
+         16705, 12464,  4395,   304,   278,  5412,  6509,  3114,   310,  1269,
+          8368, 29892,  5662,  3864,   393,   694,  1023,  5110,   414,  7150,
+           278,  1021, 10035, 20890,   541,  2012, 14169,   515,   385,   319,
+         29902, 29899, 24477,   854,  6042,   272, 15390,   310, 29537,   292,
+         15038,   297,  1009, 28947, 29892, 26233,  8671, 13501, 29892,   322,
+          9926,  3241,   263, 25871,  8004,   310, 15281,  8720, 22001, 29892,
+           599,  1550,  3990,  1218,   269,  3021,  4695,   630,  5613,  4086,
+          9068, 14009,   304, 24809,  3273, 29899, 12011,  5155, 29892,  5706,
+         13173,  7309,   800, 29892,   322,  3867,  1855, 29899,  2230, 16705,
+           373,  3971, 12084, 25078, 29892,  4550, 19479,  5281,   278,   982,
+          8041,  5110,   304,   775,   322,   282,  5555,   278,   982]]), [12.856848001480103, 0.5034208297729492, 0.5008909702301025, 0.5030407905578613, 0.5009
+427070617676, 0.5019352436065674, 0.5005671977996826, 0.5006082057952881, 0.49993014335632324, 0.4997444152832031, 0.4995880126953125, 0.49921274185180664, 0.4994962215423584, 0.5007820129394531, 0.4997265338897705, 0.5003633499145508, 0.49922800064086914, 0.4992561340332031, 0.4992516040802002, 0.49925899505615234, 0.4992344379425049, 0.4996981620788574, 0.4996638298034668, 0.5017473697662354, 0.4991719722747803, 0.5000536441802979, 0.500324010848999, 0.49982166290283203, 0.4992096424102783, 0.4997382164001465, 0.49960756301879883, 0.5001688003540039])                                                                                         
+Native: True
+
+Token Latency: True
+
+['In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative e
+xpression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer questions, generate detailed explanations, and provide real-time feedback on written communication skills, thus revolutionizing the way students learn to code and paving the way'] [32]                                                                                                                                         Iteration: 0, Time: 28.446183 sec
+Total List: [[12.856848001480103, 0.5034208297729492, 0.5008909702301025, 0.5030407905578613, 0.5009427070617676, 0.5019352436065674, 0.5005671977996826, 0.500608
+2057952881, 0.49993014335632324, 0.4997444152832031, 0.4995880126953125, 0.49921274185180664, 0.4994962215423584, 0.5007820129394531, 0.4997265338897705, 0.5003633499145508, 0.49922800064086914, 0.4992561340332031, 0.4992516040802002, 0.49925899505615234, 0.4992344379425049, 0.4996981620788574, 0.4996638298034668, 0.5017473697662354, 0.4991719722747803, 0.5000536441802979, 0.500324010848999, 0.49982166290283203, 0.4992096424102783, 0.4997382164001465, 0.49960756301879883, 0.5001688003540039]]                                                                                                                                                       checker: Sample is running in _sample() -> 3
+
+Do sample = False
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+[12.839523792266846, 0.5017108917236328, 0.4991261959075928, 0.5023007392883301, 0.5000643730163574, 0.5008127689361572, 0.49974775314331055, 0.502474308013916, 0
+.4994328022003174, 0.5004744529724121, 0.5001101493835449, 0.5001547336578369, 0.49941515922546387, 0.503023624420166, 0.4992210865020752, 0.49875569343566895, 0.49974942207336426, 0.5012979507446289, 0.501502275466919, 0.4999823570251465, 0.4987215995788574, 0.5293126106262207, 0.5188586711883545, 0.49889659881591797, 0.4981105327606201, 0.49932265281677246, 0.4986128807067871, 0.49903178215026855, 0.4985623359680176, 0.499133825302124, 0.49955010414123535, 0.49852657318115234]   Output:
+(tensor([[    1,   512,   263,  3186,   988, 23116, 21082,   338,  4327,   292,
+          1432,  9565,   310,  5199,  2834, 29892,   515,  3345,  1218,  9595,
+           304, 19479,  5281, 16021,  5925,   322,   907,  1230,  4603, 29892,
+           263,  4123, 13897, 29892, 18225,   491,   385,  1663,  2219,   519,
+         27742,   322,   385,   443,  2766,   369,   292,  3683,  3381,   304,
+          5503,   278, 24371,   310,   825,   338,  1950, 29892,  7232, 17862,
+           373,   385,   626,  2966,  2738, 16342,   304,  1653,   385, 12862,
+          1120,   468, 29878,  1664,  1788, 29892,   697,   393,   451,   871,
+          6161,  1078,   775,   363,  1959,  2264,   541,   884,  2274, 29879,
+           278,  5900,  5742,  1269,  5314, 29892,  2893, 11057,   297, 29872,
+          2416,   819,  2478, 29892,   322,  8128,  7343, 29892,  7333,  1891,
+         16705, 12464,  4395,   304,   278,  5412,  6509,  3114,   310,  1269,
+          8368, 29892,  5662,  3864,   393,   694,  1023,  5110,   414,  7150,
+           278,  1021, 10035, 20890,   541,  2012, 14169,   515,   385,   319,
+         29902, 29899, 24477,   854,  6042,   272, 15390,   310, 29537,   292,
+         15038,   297,  1009, 28947, 29892, 26233,  8671, 13501, 29892,   322,
+          9926,  3241,   263, 25871,  8004,   310, 15281,  8720, 22001, 29892,
+           599,  1550,  3990,  1218,   269,  3021,  4695,   630,  5613,  4086,
+          9068, 14009,   304, 24809,  3273, 29899, 12011,  5155, 29892,  5706,
+         13173,  7309,   800, 29892,   322,  3867,  1855, 29899,  2230, 16705,
+           373,  3971, 12084, 25078, 29892,  4550, 19479,  5281,   278,   982,
+          8041,  5110,   304,   775,   322,   282,  5555,   278,   982]]), [12.839523792266846, 0.5017108917236328, 0.4991261959075928, 0.5023007392883301, 0.5000
+643730163574, 0.5008127689361572, 0.49974775314331055, 0.502474308013916, 0.4994328022003174, 0.5004744529724121, 0.5001101493835449, 0.5001547336578369, 0.49941515922546387, 0.503023624420166, 0.4992210865020752, 0.49875569343566895, 0.49974942207336426, 0.5012979507446289, 0.501502275466919, 0.4999823570251465, 0.4987215995788574, 0.5293126106262207, 0.5188586711883545, 0.49889659881591797, 0.4981105327606201, 0.49932265281677246, 0.4986128807067871, 0.49903178215026855, 0.4985623359680176, 0.499133825302124, 0.49955010414123535, 0.49852657318115234])                                                                                         
+Native: True
+
+Token Latency: True
+
+['In a world where artificial intelligence is transforming every aspect of human life, from automating tasks to revolutionizing scientific research and creative e
+xpression, a young developer, driven by an insatiable curiosity and an unwavering determination to push the boundaries of what is possible, embarks on an ambitious journey to create an advanced autograder system, one that not only evaluates code for correctness but also understands the logic behind each implementation, identifies inefficiencies, and provides dynamic, personalized feedback tailored to the unique learning style of each student, ensuring that no two learners receive the same generic responses but instead benefit from an AI-driven mentor capable of analyzing patterns in their mistakes, suggesting alternative approaches, and fostering a deeper understanding of fundamental programming concepts, all while integrating sophisticated natural language processing algorithms to assess short-answer questions, generate detailed explanations, and provide real-time feedback on written communication skills, thus revolutionizing the way students learn to code and paving the way'] [32]                                                                                                                                         Iteration: 1, Time: 28.391782 sec
+Total List: [[12.856848001480103, 0.5034208297729492, 0.5008909702301025, 0.5030407905578613, 0.5009427070617676, 0.5019352436065674, 0.5005671977996826, 0.500608
+2057952881, 0.49993014335632324, 0.4997444152832031, 0.4995880126953125, 0.49921274185180664, 0.4994962215423584, 0.5007820129394531, 0.4997265338897705, 0.5003633499145508, 0.49922800064086914, 0.4992561340332031, 0.4992516040802002, 0.49925899505615234, 0.4992344379425049, 0.4996981620788574, 0.4996638298034668, 0.5017473697662354, 0.4991719722747803, 0.5000536441802979, 0.500324010848999, 0.49982166290283203, 0.4992096424102783, 0.4997382164001465, 0.49960756301879883, 0.5001688003540039], [12.839523792266846, 0.5017108917236328, 0.4991261959075928, 0.5023007392883301, 0.5000643730163574, 0.5008127689361572, 0.49974775314331055, 0.502474308013916, 0.4994328022003174, 0.5004744529724121, 0.5001101493835449, 0.5001547336578369, 0.49941515922546387, 0.503023624420166, 0.4992210865020752, 0.49875569343566895, 0.49974942207336426, 0.5012979507446289, 0.501502275466919, 0.4999823570251465, 0.4987215995788574, 0.5293126106262207, 0.5188586711883545, 0.49889659881591797, 0.4981105327606201, 0.49932265281677246, 0.4986128807067871, 0.49903178215026855, 0.4985623359680176, 0.499133825302124, 0.49955010414123535, 0.49852657318115234]]                                                                                                                                                        
+ ---------- Summary: ----------
+Inference latency: 28418.98 ms.
+First token average latency: 12848.19 ms.
+Average 2... latency: 500.83 ms.
+P90 2... latency: 502.30 ms.
+P99 2... latency: 529.31 ms.
