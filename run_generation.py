@@ -416,6 +416,7 @@ if args.torch_compile:
     # model.forward = torch.compile(model.forward, dynamic=True, backend=args.backend)
     model = torch.compile(model, dynamic=True, backend=args.backend)
 
+print(model)
 
 if args.benchmark:
     # if args.token_latency and not args.ipex:
